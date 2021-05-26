@@ -1,6 +1,6 @@
 package com.p6.adoption.Controllers;
 
-import com.p6.adoption.models.Animal;
+import com.p6.adoption.models.AnimalDTO;
 import com.p6.adoption.repository.AnimalStore;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,13 +31,13 @@ public class AnimalController
     }
 
     @GetMapping
-    public ResponseEntity<List<Animal>> getAvailableAnimals()
+    public ResponseEntity<List<AnimalDTO>> getAvailableAnimals()
     {
         return ResponseEntity.ok(AnimalStore.available);
     }
 
     @PostMapping
-    public ResponseEntity<Animal> addAnimalForAdoption(@RequestBody Animal animal)
+    public ResponseEntity<AnimalDTO> addAnimalForAdoption(@RequestBody AnimalDTO animal)
     {
         if (animal == null && animal.getName() == null && animal.getPhotoUrl() == null)
         {
@@ -48,13 +48,13 @@ public class AnimalController
     }
 
     @PutMapping("/{name}")
-    public void updateAnimal(@PathVariable(name = "name") String name, @RequestBody Animal updatedAnimal)
+    public void updateAnimal(@PathVariable(name = "name") String name, @RequestBody AnimalDTO updatedAnimal)
     {
 
-        List<Animal> available = AnimalStore.available;
+        List<AnimalDTO> available = AnimalStore.available;
         for (int i = 0; i < available.size(); i++)
         {
-            Animal animal = available.get(i);
+            AnimalDTO animal = available.get(i);
             if (animal.getName().equals(name))
             {
                 available.remove(i);
@@ -67,10 +67,10 @@ public class AnimalController
     @DeleteMapping("/{name}")
     public void deleteAnimal(@PathVariable(name = "name") String name)
     {
-        List<Animal> available = AnimalStore.available;
+        List<AnimalDTO> available = AnimalStore.available;
         for (int i = 0; i < available.size(); i++)
         {
-            Animal animal = available.get(i);
+            AnimalDTO animal = available.get(i);
             if (animal.getName().equals(name))
             {
                 available.remove(i);

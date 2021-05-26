@@ -1,9 +1,12 @@
-package com.p6.adoption.models;
+/*package com.p6.adoption.models;
+
+import com.p6.adoption.repository.animals.Animal;
 
 public class Cat extends Animal
 {
     public Cat(String name, String photoUrl,Integer id)
     {
+
         super(name, photoUrl,id);
     }
 
@@ -18,3 +21,5 @@ public class Cat extends Animal
         System.out.println("Cat speaks!");
     }
 }
+
+ */

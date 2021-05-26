@@ -1,28 +1,28 @@
-package com.p6.adoption.repository.dogs;
+package com.p6.adoption.repository.cats;
 
-import com.p6.adoption.repository.cats.Cat;
+import com.p6.adoption.repository.dogs.Dog;
 
 import javax.persistence.*;
 
 @Entity
 
-public class Dog
+public class Cat
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private Integer id;
 
+    private Integer id;
     private String name;
     private String url;
 
-
     public Integer getId()
     {
+
         return id;
     }
 
-    public Dog setId(Integer id)
+    public Cat setId(Integer id)
     {
         this.id = id;
         return this;
@@ -34,7 +34,7 @@ public class Dog
         return name;
     }
 
-    public Dog setName(String name)
+    public Cat setName(String name)
     {
         this.name = name;
         return this;
@@ -42,10 +42,11 @@ public class Dog
 
     public String getUrl()
     {
+
         return url;
     }
 
-    public Dog setUrl(String url)
+    public Cat setUrl(String url)
     {
         this.url = url;
         return this;

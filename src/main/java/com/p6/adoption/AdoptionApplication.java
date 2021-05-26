@@ -8,7 +8,7 @@ public class AdoptionApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(AdoptionApplication.class, args);
-	}
+			SpringApplication.run(AdoptionApplication.class, args);
 
+	}
 }

@@ -1,6 +1,8 @@
 package com.p6.adoption.models;
 
-public class DogDTO extends Animal {
+
+
+public class DogDTO extends AnimalDTO {
 
     public DogDTO(String name, String photoUrl, Integer id)
     {
